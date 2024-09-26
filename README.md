@@ -1,1 +1,3 @@
-# embedpy_lab
+# Embed py in C++
+
+use pybind11
