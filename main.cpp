@@ -18,15 +18,12 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    std::string script = argv[2];  // Get the Python script path
+    std::string script = argv[2];
 
     try {
-        // Start Python interpreter
         py::scoped_interpreter guard{};
 
-        // Run the Python script file
         py::eval_file(script);
-
     } catch (const std::exception &e) {
         std::cerr << "Error executing script: " << e.what() << std::endl;
         return 1;

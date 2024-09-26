@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = $(shell python -m pybind11 --includes) -std=c++11
 
 # The Python version might need to be adjusted to match your system
-PYTHON_LIBS = $(shell python3-config --ldflags) -lpython3.12
+PYTHON_LIBS = $(shell python3-config --ldflags --embed)
 
 TARGET = myepy
 SOURCES = main.cpp
