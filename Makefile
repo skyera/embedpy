@@ -1,10 +1,11 @@
 CXX = g++
 CXXFLAGS = $(shell python -m pybind11 --includes) -std=c++11
-P'YTHON_LIBS = $(shell python3-config --ldflags --embed)
+PYTHON_LIBS = $(shell python3-config --ldflags --embed)
 
 PYBIND11_INCLUDE = $(shell python -m pybind11 --includes | sed 's/-I//g')
 
 $(info PYBIND11_INCLUDE: $(PYBIND11_INCLUDE))
+$(info PYTHON_LIBS: $(PYTHON_LIBS))
 
 TARGET = myepy
 SOURCES = main.cpp
