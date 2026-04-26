@@ -1,10 +1,9 @@
 CXX = g++
-CXXFLAGS = $(shell python -m pybind11 --includes) -std=c++11
+PYBIND11_PATH = extern/pybind11
+CXXFLAGS = -I$(PYBIND11_PATH)/include $(shell python3-config --includes) -std=c++11
 PYTHON_LIBS = $(shell python3-config --ldflags --embed)
 
-PYBIND11_INCLUDE = $(shell python -m pybind11 --includes | sed 's/-I//g')
-
-$(info PYBIND11_INCLUDE: $(PYBIND11_INCLUDE))
+$(info PYBIND11_PATH: $(PYBIND11_PATH))
 $(info PYTHON_LIBS: $(PYTHON_LIBS))
 
 TARGET = myepy
