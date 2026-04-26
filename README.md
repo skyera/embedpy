@@ -27,12 +27,12 @@ make
 
 ## Usage
 
-Run the executable by providing a Python script:
+Run the host executable by providing the example Python script:
 ```bash
-./myepy --py script.py
+./embedpy --py example.py
 ```
 
 ## How it works
-- `main.cpp`: Initializes the Python interpreter and defines an embedded module `ex` with C++ functions.
-- `script.py`: A Python script that imports the `ex` module and calls the C++ functions.
-- `Makefile`: Compiles the C++ code, linking against the local `pybind11` headers and the system's Python library.
+- `host.cpp`: Initializes the Python interpreter and defines an embedded module `host` with C++ functions.
+- `example.py`: A Python script that imports the `host` module and calls the C++ functions.
+- `Makefile`: Compiles the C++ code into the `embedpy` binary, linking against the local `pybind11` headers and the system's Python library.

@@ -19,7 +19,7 @@ std::vector<int> generate_list(int size) {
     return list;
 }
 
-PYBIND11_EMBEDDED_MODULE(ex, m) {
+PYBIND11_EMBEDDED_MODULE(host, m) {
     m.def("add", &add, "A function that adds two numbers");
     m.def("generate_list", &generate_list, "A function that generates a list");
 }

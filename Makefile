@@ -6,8 +6,8 @@ PYTHON_LIBS = $(shell python3-config --ldflags --embed)
 $(info PYBIND11_PATH: $(PYBIND11_PATH))
 $(info PYTHON_LIBS: $(PYTHON_LIBS))
 
-TARGET = myepy
-SOURCES = main.cpp
+TARGET = embedpy
+SOURCES = host.cpp
 
 all: $(TARGET)
 
